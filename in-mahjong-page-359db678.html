@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麻将胡了 · 资料整理与信息索引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f3ed;
+            font-family: "Noto Serif SC", "Source Han Serif SC", "SimSun", "Times New Roman", Georgia, serif;
+            color: #3c3a36;
+            line-height: 1.8;
+            padding: 2rem 1rem;
+        }
+
+        .page {
+            max-width: 960px;
+            margin: 0 auto;
+            background: #fcf9f5;
+            padding: 2.5rem 2rem 3rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: #4f4a43;
+            border-left: 4px solid #b8a693;
+            padding-left: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #7f766b;
+            margin-bottom: 2.5rem;
+            padding-left: 1.4rem;
+            border-bottom: 1px solid #e6dfd5;
+            padding-bottom: 0.8rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #584e42;
+            margin: 2.2rem 0 1rem 0;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px dashed #d6cdc0;
+        }
+
+        .section-title:first-of-type {
+            margin-top: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+            word-break: break-word;
+        }
+
+        .intro-box {
+            background: #f5efe7;
+            padding: 1.5rem 1.8rem;
+            border-radius: 14px;
+            margin: 1.8rem 0;
+            border-left: 5px solid #c7b9a8;
+        }
+
+        .intro-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .grid-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.5rem 0 1.8rem;
+        }
+
+        .card {
+            flex: 1 1 240px;
+            background: #faf6f1;
+            padding: 1.5rem 1.2rem;
+            border-radius: 16px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            border: 1px solid #e8e0d6;
+            transition: box-shadow 0.15s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #5d5246;
+            margin-bottom: 0.6rem;
+            padding-bottom: 0.2rem;
+            border-bottom: 1px dotted #d4cabc;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            color: #4c4640;
+        }
+
+        .callout {
+            background: #f0ebe3;
+            border-radius: 12px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.8rem 0;
+            border: 1px solid #e3d9ce;
+            font-style: normal;
+        }
+
+        .callout strong {
+            color: #4f3f2f;
+            font-weight: 600;
+        }
+
+        .faq-mini {
+            margin: 2rem 0 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e1d7cb;
+            padding-bottom: 0.8rem;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: #4b4137;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-a {
+            color: #5e554b;
+            font-size: 0.95rem;
+        }
+
+        .footer-note {
+            margin-top: 2.8rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e0d7cb;
+            font-size: 0.9rem;
+            color: #7a7166;
+            text-align: center;
+        }
+
+        .footer-note a {
+            color: #6b5f51;
+            text-decoration: none;
+            border-bottom: 1px solid #b7aa9b;
+            padding-bottom: 1px;
+        }
+
+        .footer-note a:hover {
+            color: #3f352b;
+            border-color: #7a6a5a;
+        }
+
+        .inline-link {
+            color: #6b5f51;
+            text-decoration: none;
+            border-bottom: 1px solid #c1b4a4;
+            padding-bottom: 1px;
+        }
+
+        .inline-link:hover {
+            color: #3b332c;
+            border-color: #7a6a5a;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.6rem;
+            }
+            .page {
+                padding: 1.5rem 1rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+                padding-left: 0.8rem;
+            }
+            .subhead {
+                padding-left: 1rem;
+                font-size: 0.9rem;
+            }
+            .grid-cards {
+                flex-direction: column;
+            }
+            .card {
+                flex: 1 1 auto;
+            }
+            .intro-box {
+                padding: 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <h1>麻将胡了 · 知识库入口</h1>
+        <div class="subhead">资料整理 · 信息索引 · 专题记录</div>
+
+        <p>从规则拆解到玩法演变，从术语整理到文化随笔，关于「麻将胡了」的内容积累已经形成了一套松散的档案集。这里没有算法推荐，也没有动态推送，有的只是按主题归拢的卡片与段落——适合自己慢慢翻，也适合偶然路过时停下来读两段。</p>
+
+        <div class="intro-box">
+            <p><strong>目录感布局</strong> —— 这不是一个一次性读完的页面，更像一个案头的文件夹。每个板块都指向一个资料侧写，你可以随时跳到自己感兴趣的部分。如果你对<strong>麻将胡了</strong>的具体背景或衍生记录感兴趣，不妨从下面的分类卡片开始。</p>
+        </div>
+
+        <div class="section-title">📂 资料分区</div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <h3>规则与变体</h3>
+                <p>不同地域的胡牌逻辑、番型对照、特殊牌型备忘录，以及从民间打法到在线游艺的规则流变笔记。</p>
+            </div>
+            <div class="card">
+                <h3>术语小集</h3>
+                <p>“自摸”“点炮”“杠上开花”…… 收录常用及冷门说法，附带简要出处与使用场景说明。</p>
+            </div>
+            <div class="card">
+                <h3>杂谈与见闻</h3>
+                <p>牌桌上的闲话、文化随笔、老玩家口述片段，以及围绕「麻将胡了」这个短语延伸出的日常观察。</p>
+            </div>
+            <div class="card">
+                <h3>索引与链接</h3>
+                <p>指向站内外部参考资源的整理页，包括工具、文章存档以及持续更新的阅读清单。</p>
+            </div>
+        </div>
+
+        <div class="section-title">📖 说明区</div>
+        <p>这个站点的定位是<strong>资料整理与信息索引</strong>，而非攻略或教学。每一条记录都经过筛选与标注，尽量保留原貌并注明来源（如有）。如果你在别处看到过类似的说法，也可以对照这里的内容做交叉印证。站内不设排行榜、不收集数据，所有内容只为了把零散的信息拼成一张能用的网。</p>
+        <p>在整理过程中，我注意到人们对「麻将胡了」四个字的理解常常不同——有人把它当成一个游戏规则词条，有人把它看作一种状态描述，还有人用它来指代某个特定的线上场景。因此，这个索引尽量兼顾多义性，不做单一结论。</p>
+
+        <div class="callout">
+            <strong>💡 提示区 · 使用建议</strong><br>
+            · 想快速查找某个术语？建议先翻阅“术语小集”卡片。<br>
+            · 对玩法演变感兴趣？可以顺着“规则与变体”往下看。<br>
+            · 如果只是想随便读点有意思的片段，“杂谈与见闻”板块比较轻松。<br>
+            · 站外参考全部汇总在“索引与链接”部分，会不定期更新。
+        </div>
+
+        <div class="section-title">❓ 常见问题摘要</div>
+        <div class="faq-mini">
+            <div class="faq-item">
+                <div class="faq-q">/ 这里的内容是原创还是转载？</div>
+                <div class="faq-a">大部分为整理后的原创笔记，少量引用内容会标注出处。所有信息均经过核实，但无法保证绝对无遗漏。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">/ 为什么叫“麻将胡了”？</div>
+                <div class="faq-a">取自牌桌上最常见的一句宣布，也作为这个资料集合的朴素代号——简单，直接，一听就懂。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">/ 会不会有实时对战或游戏功能？</div>
+                <div class="faq-a">不会。这里仅做信息整理与展示，不提供任何游戏或博彩功能，保持纯粹的阅读与索引属性。</div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <p style="margin-bottom: 0.3rem;">你可以把这里当作一个安静的参考书架。网站地址：<a href="https://in-mahjong.com">麻将胡了</a> · 内容持续缓慢生长。</p>
+            <p style="margin-top: 0.6rem; font-size: 0.85rem; color: #999387;">— 本页为知识库入口式布局，仅提供分类导航与信息说明 —</p>
+        </div>
+
+    </div>
+</body>
+</html>
