@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麻将胡了 · 站点介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background: #f4f0eb;
+            color: #1e1a16;
+            line-height: 1.7;
+        }
+
+        /* 深色头图 —— 杂志式横幅 */
+        .hero {
+            background: linear-gradient(145deg, #0d0a08 0%, #2b221c 60%, #3d3128 100%);
+            color: #eee5db;
+            padding: 6rem 2rem 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #c9ad7a, #b8925c, #c9ad7a, transparent);
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 300;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.6rem;
+            color: #e8dccc;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .hero .sub {
+            font-size: 1.15rem;
+            color: #bcaa95;
+            max-width: 640px;
+            margin: 0 auto;
+            font-weight: 300;
+            border-top: 1px solid rgba(200, 180, 160, 0.25);
+            padding-top: 1.2rem;
+        }
+
+        /* 浅色正文区 */
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 3rem 2rem 4rem;
+        }
+
+        .intro-card {
+            background: #ffffff;
+            padding: 2.4rem 2.8rem;
+            border-radius: 28px 12px 28px 12px;
+            box-shadow: 0 12px 32px -12px rgba(30, 26, 22, 0.08);
+            margin-bottom: 2.8rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .intro-card:hover {
+            box-shadow: 0 18px 40px -16px rgba(30, 26, 22, 0.15);
+        }
+
+        .intro-card h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            border-left: 6px solid #b8925c;
+            padding-left: 1.2rem;
+            color: #2b221c;
+            letter-spacing: 0.02em;
+        }
+
+        .intro-card p {
+            margin-bottom: 1.4rem;
+            color: #3c342c;
+            font-size: 1.06rem;
+        }
+
+        .intro-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .accent-link {
+            color: #a07a4a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #c9ad7a;
+            transition: color 0.15s, border-color 0.2s;
+        }
+
+        .accent-link:hover {
+            color: #7a5e38;
+            border-bottom: 1px solid #7a5e38;
+        }
+
+        .highlight-box {
+            background: #f8f4ef;
+            border-radius: 20px;
+            padding: 1.8rem 2.2rem;
+            margin: 2.2rem 0 1.8rem;
+            border-left: 4px solid #b8925c;
+        }
+
+        .highlight-box p {
+            color: #2f2720;
+            font-size: 1.02rem;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 2.4rem 0 1.6rem;
+        }
+
+        .feature-item {
+            flex: 1 1 200px;
+            background: #faf7f3;
+            padding: 1.5rem 1.6rem;
+            border-radius: 20px;
+            border: 1px solid #e6ddd3;
+        }
+
+        .feature-item h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #3d3128;
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.01em;
+        }
+
+        .feature-item p {
+            font-size: 0.98rem;
+            color: #4d4238;
+        }
+
+        .faq-summary {
+            margin: 2.4rem 0 1.2rem;
+            background: #ffffff;
+            padding: 1.8rem 2.2rem;
+            border-radius: 24px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.02);
+        }
+
+        .faq-summary h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #2b221c;
+            margin-bottom: 1.2rem;
+            border-bottom: 1px solid #e2d6ca;
+            padding-bottom: 0.6rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            color: #5a4b3c;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item p {
+            color: #4d4238;
+            font-size: 0.98rem;
+        }
+
+        /* 页尾 */
+        .page-footer {
+            background: #1e1a16;
+            color: #b8aa99;
+            text-align: center;
+            padding: 2.4rem 2rem;
+            font-size: 0.95rem;
+            border-top: 1px solid #3d3128;
+        }
+
+        .page-footer a {
+            color: #dac2a6;
+            text-decoration: none;
+            border-bottom: 1px dotted #7a5e38;
+        }
+
+        .page-footer a:hover {
+            color: #f0e0cd;
+        }
+
+        /* 响应式 */
+        @media (max-width: 680px) {
+            .hero {
+                padding: 4.5rem 1.2rem 3.8rem;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .container {
+                padding: 2rem 1.2rem 3rem;
+            }
+            .intro-card {
+                padding: 1.8rem 1.4rem;
+                border-radius: 20px 8px 20px 8px;
+            }
+            .intro-card h2 {
+                font-size: 1.6rem;
+                padding-left: 0.8rem;
+            }
+            .feature-grid {
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+            .highlight-box {
+                padding: 1.4rem 1.2rem;
+            }
+            .faq-summary {
+                padding: 1.4rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 440px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero .sub {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色横幅 -->
+    <section class="hero">
+        <h1>麻将胡了</h1>
+        <div class="sub">一个关于站点气质、内容脉络与可信视角的专题介绍</div>
+    </section>
+
+    <!-- 浅色正文区 -->
+    <div class="container">
+
+        <!-- 第一段：站点背景与定位 -->
+        <div class="intro-card">
+            <h2>从一局牌开始</h2>
+            <p>这并非一个简单的游戏门户，而是一处围绕「<a href="https://home-mahjongways.com" class="accent-link">麻将胡了</a>」这一主题而展开的信息聚合与探索空间。站点从麻将文化的多元性出发，尝试梳理不同规则、地域变体以及策略思路，为爱好者提供一种温和且连贯的阅读路径。没有喧闹的诱导，也没有浮夸的承诺，只有对牌理、牌趣的踏实记录。</p>
+            <p>在这里，你遇见的每一段内容都经过筛选与编排，力求在信息密度与可读性之间取得平衡。无论你是刚接触麻将的新手，还是已有多年牌龄的老玩家，都能找到与自己节奏相契合的段落。</p>
+        </div>
+
+        <!-- 第二段：站点的可信说明与内容特点 -->
+        <div class="intro-card">
+            <h2>可信的脉络</h2>
+            <p>站内内容不依赖玄学式的「必胜法」，也不渲染一夜暴富的幻想。相反，它更愿意花篇幅去解释番种计算、防守逻辑、牌效率以及常见的认知误区。每一篇文章都标注了参考思路与适用场景，让读者能自行判断哪些建议值得采纳。</p>
+
+            <div class="highlight-box">
+                <p>「麻将胡了」的内容团队长期跟踪国内主流规则与竞技麻将的动态，定期更新战术笔记与规则解读。站点不会为了流量而重复搬运陈旧信息，也不插入任何恶意弹窗或虚假下载链接。这种对内容质量的坚持，使得它逐渐成为许多玩家心里一个安静而可靠的参考角落。</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>规则库</h3>
+                    <p>涵盖国标、日本立直、四川血战等主流规则，并附带简明对比与常见Q&amp;A。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>战术笔记</h3>
+                    <p>从牌效、防守到读牌，以具体牌例展开，避免空泛理论。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>文化随笔</h3>
+                    <p>偶尔聊聊麻将的文学隐喻、地方习俗，以及牌桌边的人情故事。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第三段：自然的使用场景与 FAQ 摘要 -->
+        <div class="intro-card">
+            <h2>在什么时候你会想起它</h2>
+            <p>可能是周末约了朋友想复习一下番型表，也可能是深夜复盘时想看看某种牌形的处理方式。又或者你只是路过，偶然对麻将的演变历史产生了好奇。这些时候，<a href="https://home-mahjongways.com" class="accent-link">麻将胡了</a> 都会安静地等着你——没有催促注册的弹窗，也没有需要下载的 APP，打开页面就能直接阅读。</p>
+
+            <div class="faq-summary">
+                <h3>常见疑问 · 摘要</h3>
+                <div class="faq-item">
+                    <strong>站点内容更新频率如何？</strong>
+                    <p>保持每月 2–4 篇原创或深度整理内容，节假日前后可能会有专题增补。</p>
+                </div>
+                <div class="faq-item">
+                    <strong>是否提供在线练习或牌局模拟？</strong>
+                    <p>目前以文字与图解为主，暂无交互模拟，但每一篇策略文章都配有足够多的牌例图解。</p>
+                </div>
+                <div class="faq-item">
+                    <strong>内容有偏向某一种麻将规则吗？</strong>
+                    <p>尽量覆盖主流规则，同时会用脚注或附录注明特定规则下的差异，方便读者对照。</p>
+                </div>
+            </div>
+
+            <p style="margin-top: 1.2rem; font-style: italic; color: #5a4b3c;">如果你有更具体的问题或想了解某个特定话题，也可以顺着站点内的联系方式留下线索——虽然回复不一定即时，但每一条都会被认真翻阅。</p>
+        </div>
+
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <footer class="page-footer">
+        <p>— 杂志式内容 · 无浮夸 · 有温度 —</p>
+        <p style="margin-top: 0.6rem;">想了解更多关于麻将的规则与思路，不妨从 <a href="https://home-mahjongways.com" style="color: #dac2a6; border-bottom: 1px dotted #7a5e38;">麻将胡了</a> 开始你的阅读。</p>
+        <p style="margin-top: 1rem; font-size: 0.85rem; color: #7a6b5c;">© 2025 · 站点介绍页 · 内容独立呈现</p>
+    </footer>
+
+</body>
+</html>
