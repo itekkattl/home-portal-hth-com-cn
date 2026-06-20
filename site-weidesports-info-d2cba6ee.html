@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>伟德体育 · 快速了解平台用途</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f2f7fa;
+      color: #1f2e3d;
+      line-height: 1.7;
+      padding: 0 20px;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 40px 0 60px;
+    }
+
+    /* hero */
+    .hero {
+      background: linear-gradient(145deg, #1f5f6e 0%, #2b7e8c 100%);
+      border-radius: 32px;
+      padding: 52px 44px;
+      margin-bottom: 48px;
+      box-shadow: 0 12px 28px rgba(27, 87, 94, 0.18);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -40px;
+      top: -40px;
+      width: 280px;
+      height: 280px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      color: white;
+      letter-spacing: -0.3px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      max-width: 700px;
+    }
+
+    .hero .sub {
+      font-size: 1.2rem;
+      color: #d7edf2;
+      max-width: 600px;
+      margin-bottom: 26px;
+    }
+
+    .hero .cta-note {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(4px);
+      padding: 10px 22px;
+      border-radius: 60px;
+      color: white;
+      font-weight: 500;
+      font-size: 0.95rem;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    /* 网格卡片区 — 优势+说明混合 */
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 28px 24px;
+      box-shadow: 0 6px 14px rgba(0, 30, 40, 0.04);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border-left: 4px solid #3d9aa8;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 28px rgba(31, 95, 110, 0.08);
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #1a5b68;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card h3::before {
+      content: '▹';
+      color: #3d9aa8;
+      font-weight: 300;
+    }
+
+    .card p {
+      color: #2f4050;
+      font-size: 0.98rem;
+    }
+
+    .card .tag {
+      display: inline-block;
+      background: #e3f1f4;
+      color: #1f6a78;
+      padding: 3px 14px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin-top: 10px;
+    }
+
+    /* 说明区 — 用户场景 */
+    .scenario-block {
+      background: white;
+      border-radius: 24px;
+      padding: 32px 36px;
+      margin-bottom: 48px;
+      box-shadow: 0 4px 12px rgba(0, 30, 40, 0.03);
+      border: 1px solid #ddecf0;
+    }
+
+    .scenario-block h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #124c59;
+      margin-bottom: 18px;
+      letter-spacing: -0.2px;
+    }
+
+    .scenario-block p {
+      margin-bottom: 14px;
+      color: #2b3f4d;
+    }
+
+    .scenario-block strong {
+      color: #1f6a78;
+    }
+
+    .insight-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+    }
+
+    .insight-list li {
+      background: #eaf4f7;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      color: #145b68;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .insight-list li::before {
+      content: '✓';
+      color: #2d8e9e;
+      font-weight: 600;
+    }
+
+    /* FAQ 摘要 */
+    .faq-summary {
+      background: white;
+      border-radius: 24px;
+      padding: 28px 34px;
+      margin-bottom: 48px;
+      box-shadow: 0 4px 10px rgba(0, 30, 40, 0.02);
+      border: 1px solid #d5e5ea;
+    }
+
+    .faq-summary h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #124c59;
+      margin-bottom: 18px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e2eef2;
+      padding: 14px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      color: #1a5b68;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .faq-q::before {
+      content: 'Q';
+      background: #d1e8ee;
+      color: #196c7a;
+      font-size: 0.7rem;
+      font-weight: 700;
+      width: 24px;
+      height: 24px;
+      border-radius: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .faq-a {
+      color: #2a4453;
+      padding-left: 32px;
+      font-size: 0.95rem;
+    }
+
+    .faq-a a {
+      color: #1b7b8b;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 500;
+    }
+
+    .faq-a a:hover {
+      color: #0b4c58;
+    }
+
+    /* 底部链接 */
+    .footer-links {
+      text-align: center;
+      padding: 20px 0 10px;
+      border-top: 1px solid #d1e2e8;
+      color: #3c5f6b;
+      font-size: 0.95rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 24px;
+    }
+
+    .footer-links a {
+      color: #1b7b8b;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .footer-links a:hover {
+      border-bottom-color: #2d8e9e;
+    }
+
+    .footer-links .brand-link {
+      background: #e5f2f5;
+      padding: 2px 14px;
+      border-radius: 50px;
+      font-weight: 600;
+      color: #135a67;
+    }
+
+    /* 响应式 */
+    @media (max-width: 680px) {
+      .hero {
+        padding: 36px 24px;
+      }
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .hero .sub {
+        font-size: 1rem;
+      }
+      .grid-cards {
+        grid-template-columns: 1fr;
+      }
+      .scenario-block {
+        padding: 24px 20px;
+      }
+      .faq-summary {
+        padding: 22px 20px;
+      }
+      .footer-links {
+        flex-direction: column;
+        gap: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- hero 区 -->
+    <header class="hero">
+      <h1>快速识别 <span style="color:#c3eaf2;">伟德体育</span> 的用途</h1>
+      <p class="sub">一个整合体育资讯、赛事数据与社区讨论的平台，适合日常快速查找比赛动态与运动内容。</p>
+      <span class="cta-note">⚡ 聚焦体育 · 简洁直接</span>
+    </header>
+
+    <!-- 优势区 + 说明混合 网格卡片 -->
+    <section class="grid-cards">
+      <div class="card">
+        <h3>赛事覆盖面</h3>
+        <p>提供足球、篮球、网球等主流运动的最新赛程、比分与统计。不需要切换多个站点，在一个地方就能看到关键信息。</p>
+        <span class="tag">数据更新及时</span>
+      </div>
+      <div class="card">
+        <h3>资讯与解读</h3>
+        <p>每天更新的赛事前瞻、赛后分析，以及运动员动态。内容偏实用，帮助用户了解比赛背景与看点。</p>
+        <span class="tag">每日内容</span>
+      </div>
+      <div class="card">
+        <h3>社区讨论氛围</h3>
+        <p>用户可以在话题区交流看法，分享自己对球队、战术或赛果的见解。氛围偏向理性讨论，适合体育爱好者。</p>
+        <span class="tag">交流区</span>
+      </div>
+      <div class="card">
+        <h3>界面与导航</h3>
+        <p>首页按运动分类，顶部有快速筛选。页面重点突出当天热门赛事，减少寻找成本。移动端适配较好。</p>
+        <span class="tag">体验流畅</span>
+      </div>
+    </section>
+
+    <!-- 说明区：从用户角度概述网站用途 -->
+    <section class="scenario-block">
+      <h2>这个网站能帮你做什么</h2>
+      <p>如果你平时关注体育比赛，想快速知道今天的赛程、比分或者某支球队的近况，<strong>伟德体育</strong>把这些信息集中在一个页面上。不需要注册就能浏览大部分内容，很适合临时查一下比赛结果或阅读简评。</p>
+      <p>另外，网站里也有分类专栏，比如「热门赛事」「深度观察」等，满足不同关注深度的需求。对于只想大致了解某个联赛走势的用户来说，这种结构比刷社交媒体的碎片信息更有效率。</p>
+      <ul class="insight-list">
+        <li>赛程与实时比分</li>
+        <li>赛事短评与前瞻</li>
+        <li>球队/球员数据</li>
+        <li>社区话题讨论</li>
+      </ul>
+      <p style="margin-top: 14px;">总体而言，如果你希望有一个相对直接、不带过多干扰的体育信息聚合页面，可以试试把 <a href="https://site-weidesports.com" style="color:#1b7b8b; font-weight:600;">伟德体育</a> 加入书签。它更偏工具属性，而不是娱乐门户。</p>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section class="faq-summary">
+      <h2>常见疑问 · 简要回答</h2>
+      <div class="faq-item">
+        <div class="faq-q">伟德体育需要付费吗？</div>
+        <div class="faq-a">浏览赛事信息、阅读资讯及参与社区讨论都是免费的。目前没有隐藏收费项目。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">数据来源可靠吗？</div>
+        <div class="faq-a">平台与多家数据供应商合作，赛程和比分信息通常与官方保持一致。如发现差异可以提交反馈。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">如何找到具体球队或联赛？</div>
+        <div class="faq-a">顶部导航栏有搜索入口，输入球队名称或联赛关键词即可。也可以按运动分类逐级浏览。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">移动端体验如何？</div>
+        <div class="faq-a">响应式设计，手机浏览器直接打开即可正常阅读。页面布局会自适应屏幕宽度，操作区域也适合触控。</div>
+      </div>
+      <p style="margin-top: 16px; color: #2f5c6b; font-size:0.95rem;">更多细节可以直接访问 <a href="https://site-weidesports.com" style="color:#1b7b8b; font-weight:500;">伟德体育</a> 网站内的帮助页面。</p>
+    </section>
+
+    <!-- 底部链接区 -->
+    <footer class="footer-links">
+      <span><a href="https://site-weidesports.com" class="brand-link">伟德体育</a> · 体育信息聚合</span>
+      <span>内容仅供个人参考，不构成任何建议</span>
+    </footer>
+
+  </div>
+</body>
+</html>
